@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from scipy import stats
 import pickle as pk
 st.set_page_config(
     page_title='price_predictior'
@@ -23,6 +22,7 @@ type=st.selectbox('Enter your property type',df['type'].unique().tolist())
 sector=st.selectbox('Your prefeble sector',
     df['sector'].unique().tolist())
 built_up_area=st.number_input('Your estimated area',help='Enter your area in sq-ft')
+built_up_area=float(built_up_area)
 agePossession=st.selectbox('How old property are you looking',
     df['agePossession'].unique().tolist()
 )
@@ -39,8 +39,10 @@ balcony=st.selectbox('How many balcony you prefer',df['balcony'].unique().tolist
 bedRoom=float(st.selectbox('BHK',sorted(df['bedRoom'].unique().tolist())))
 bathroom=float(st.selectbox('Bathroom',sorted(df['bathroom'].unique().tolist())))
 pooja_room=st.selectbox('Do you want pooja room',options=[1,0])
+pooja_room=int(pooja_room)
 # 1-->yes,0-->no
 servant_room=st.selectbox('Do you want servant room',options=[1,0])
+servant_room=int(servant_room)
 if st.button('Predict'):
     data=[[bedRoom, bathroom, balcony, floor_type, agePossession,
        sector, type, built_up_area, servant_room, pooja_room,
