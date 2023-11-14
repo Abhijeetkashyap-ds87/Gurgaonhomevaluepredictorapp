@@ -1,5 +1,5 @@
-numpy
-pandas
-scikit-learn
-category_encoders
-scipy
+numpy==1.24.4
+pandas==2.0.3
+scikit-learn==1.2.2
+category_encoders==2.6.2
+scipy==1.9.1
