@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle as pk
-from pandas.core.indexes import numeric
 
 # Set page configuration
 st.set_page_config(
