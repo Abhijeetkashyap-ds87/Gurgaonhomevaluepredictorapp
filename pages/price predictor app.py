@@ -13,7 +13,7 @@ st.set_page_config(
 
 # loading the dataframe
 with open('database/modified_df.pkl','rb') as file:
-    df=pk.read_pickle(file)
+    df=pd.read_pickle(file)
 # loading the pipeline
 with open('database/xgboost_pipeline.pkl','rb') as file:
     pipeline=pd.read_pickle(file)
