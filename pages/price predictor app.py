@@ -29,7 +29,7 @@ with st.form('Enter your (Valid) property details'):
     #     luxury balcony '''
     sector=st.selectbox('Your prefeble sector',
         df['sector'].unique().tolist())
-    built_up_area=st.number_input('Your estimated area',help='Enter your area in sq-ft')
+    built_up_area=st.number_input('Your estimated area',placeholder='Enter your area in sq-ft',min_value=30.00,max_value=15000.00,step=1.,format="%2.1f")
     built_up_area=float(built_up_area)
     agePossession=st.selectbox('How old property are you looking',
         df['agePossession'].unique().tolist()
