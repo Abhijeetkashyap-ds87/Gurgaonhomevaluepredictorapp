@@ -16,7 +16,7 @@ with open('database/modified_df.pkl','rb') as file:
     df=pk.load(file)
 # loading the pipeline
 with open('database/xgboost_pipeline.pkl','rb') as file:
-    pipeline=pk.load(file)
+    pipeline=pd.read_pickle(file)
 #st.dataframe(df)
 # create form for  taking inputs
 st.subheader('Property Price Predictor')
