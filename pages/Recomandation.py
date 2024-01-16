@@ -30,14 +30,7 @@ with open('database/location.pkl', 'rb') as matrix2:
 with open('database/price.pkl', 'rb') as matrix3:
     price_sim = pk.load(matrix3)
 
-# Main content
-st.title('Find Your Nearby Property')
-
-name = st.selectbox('Enter your property name', df.columns.unique().tolist())
-radius = st.number_input('Your estimated radius (in meters)', help='Enter your radius')
-
-property = df[df[name] < radius][name].index.unique().tolist()
-# Recomander function
+# Recommendation function
 def recommendation(sim_matrix, property_name):
     sim_score = list(enumerate(sim_matrix[df.index.get_loc(property_name)]))
     sorted_score = sorted(sim_score, key=lambda x: x[1], reverse=True)
@@ -49,6 +42,12 @@ def recommendation(sim_matrix, property_name):
         'score': top_score
     })
     return rec
+
+# Main content
+st.subheader('Select any property to get recommendations')
+property = st.selectbox(f'## Get recommendations on the basis of facilities, price and locality:',
+                       df.index.unique().tolist(), index=None, placeholder='Select from the drop-down menu')
+
 # Button to trigger search
 search_button = st.button('Search')
 
@@ -60,15 +59,8 @@ if 'load_state' not in st.session_state:
 if search_button or st.session_state.load_state:
     st.session_state.load_state = True
     # Recommendation function
-    property_list = [ele for ele in property]
-    if len(property_list) == 0:
-        st.warning('No property found in the database. Try with different values.')
-    else:
-        recom_property = st.radio(f'## Click on any property to get recommendations:', property_list, key='unique_key')
-        if recom_property:
-            # Assigning weight to recommender system
-            similarity_matrix = 0.3 * facility_sim + 0.4 * price_sim + 0.3 * location_sim
-            rec_df = recommendation(similarity_matrix, recom_property)
-            st.write("### Recommendations:")
-            for i in rec_df['property_suggestion']:
-                st.markdown(f'<span style="color:#1E90FF; font-size: 20px;">{i}</span>', unsafe_allow_html=True)
+    similarity_matrix = 0.3 * facility_sim + 0.4 * price_sim + 0.3 * location_sim
+    rec_df = recommendation(similarity_matrix, property)
+    st.write("### Recommendations:")
+    for i in rec_df['property_suggestion']:
+        st.markdown(f'<span style="color:#1E90FF; font-size: 20px;">{i}</span>', unsafe_allow_html=True)
