@@ -37,15 +37,12 @@ st.title('Property Recommender System')
 st.markdown("""
 ## Overview
 
-Our Recommender System is a simple two-level content-based system designed to assist you in finding the perfect property. The system takes into consideration both the nearby locations and various property features to offer personalized recommendations.
+Our Recommender System is a simple content-based system designed to assist you in finding the perfect property. The system takes into consideration into various property features to offer personalized recommendations.
 
-## Level 1: Nearby Location Filtering
 
-At the first level, the system filters properties based on their proximity to your specified location. By entering your property name and estimated radius, you can quickly discover nearby properties. This initial filter simplifies your search by focusing on the geographic aspect.
+##  Content-Based Recommendations
 
-## Level 2: Content-Based Recommendations
-
-For a more refined search, our system uses advanced content-based recommendation techniques at the second level. It considers factors such as facilities, price, and nearby locations to provide tailored suggestions.
+For a more refined search, our system uses advanced content-based recommendation techniques . It considers factors such as facilities, price, and nearby locations to provide tailored suggestions.
 
 ### Techniques Used:
 
@@ -61,13 +58,9 @@ The system employs Cosine Similarity, a mathematical measure, to calculate the s
 
 ## How to Use
 
-1. Click the "Search" button to initiate the recommendation process.
+1. Choose from the list of nearby properties from drop-down menu.
 
-2. Enter your property name and specify your estimated radius for the initial location-based filtering.
-
-3. Choose from the list of nearby properties generated.
-
-4. For more refined suggestions, select a property, and the system will provide content-based recommendations based on facilities, price, and location similarity.
+2. select a property, and the system will provide content-based recommendations based on facilities, price, and location similarity.
 
 Explore the recommendations and find your dream property with ease!
 
