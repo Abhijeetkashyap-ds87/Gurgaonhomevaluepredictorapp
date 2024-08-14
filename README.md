@@ -34,5 +34,34 @@ The GurgaonHomeValuePredictorApp is designed to predict property values in Gurga
 4. Run the Streamlit app::
    ```bash
    streamlit run app.py
+   
+## Screenshots of App
+
+<div align="center">
+  <div style="display: flex; justify-content: space-between;">
+    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 10 PM" src="https://github.com/user-attachments/assets/4de4e1c1-031f-4c25-bdb6-5113a7fae804">
+    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 41 PM" src="https://github.com/user-attachments/assets/cd8653f2-340b-46ca-bbdf-90cfb8a550d0">
+  </div>
+  <div style="display: flex; justify-content: space-between; margin-top: 15px;">
+    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 10 PM" src="https://github.com/user-attachments/assets/0bdb7c71-b0f5-4cbb-bdc3-e13f46c36ebe">
+    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 41 PM" src="https://github.com/user-attachments/assets/74c76353-be94-42a8-8f5c-0bc2f40bcda4">
+  </div>
+</div>
+
+## Future Enhancements
+- **Online Deployment**: Plan to deploy the application online for broader accessibility, allowing users to access it from any location.
+- **Integration with More Real-Time Data Sources**: Plan to incorporate additional real-time data sources for more accurate predictions.
+- **Advanced Filtering**: Add more advanced filtering options for users to refine their input criteria.
+- **Model Improvements**: Explore other machine learning models and techniques to enhance prediction accuracy.
+
+
+
+
+
+
+
+
+
+
 
 
