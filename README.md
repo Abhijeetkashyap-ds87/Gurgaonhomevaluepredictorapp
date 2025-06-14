@@ -1,67 +1,67 @@
-# GurgaonHomeValuePredictorApp
+# Gurgaon Home Value Predictor App
 
 ## Overview
-The GurgaonHomeValuePredictorApp is designed to predict property values in Gurgaon based on various features such as location, size, and amenities. The app leverages machine learning algorithms to provide accurate and reliable predictions, helping users make informed real estate decisions.
+
+The Gurgaon Home Value Predictor App is a machine learning-based application designed to estimate residential property prices in Gurgaon. It also provides recommendations for similar properties based on selected features. The goal of this project is to explore model performance differences between traditional ML models and deep learning approaches, while also focusing on deployment and user experience.
+
+---
 
 ## Features
-- **User Input Interface**: Allows users to input property details like location, size, and amenities.
-- **Predictive Model**: Utilizes advanced machine learning models to predict the property value based on input features.
-- **Interactive Visualizations**: Displays prediction results along with key insights and trends in the Gurgaon real estate market.
-- **Streamlit Deployment**: The app is deployed using Streamlit, providing an easy-to-use web interface accessible on any device.
 
-## Tech Stack
-- **Frontend**: Streamlit for a seamless and interactive web-based user experience.
-- **Backend**: Python handling data processing and model predictions.
-- **Machine Learning**: XGBoost for regression analysis and model predictions.
-- **Data Visualization**: Matplotlib and Seaborn for generating visual insights.
-## Methods Used
-- **Data Cleaning****: Utilized regular expressions and pandas for effective data cleaning.
-- **Feature Engineering**: Created new columns based on clustering algorithms to enhance model performance.
-- **Feature Extraction**: Employed tree-based feature extraction methods and used SHAP, permutation, and combination techniques for extracting impactful features.
-- **Model Selection**: Explored Extra Tree Regressor and XGBoost Regressor. Chose XGBoost Regressor and performed randomized search CV and cross-validation for a good bias-variance trade-off.
+- Property value prediction using user-input details such as location, size, and amenities  
+- Comparison of model outputs from XGBoost and a deep learning ANN  
+- SHAP-based interpretability for the machine learning predictions  
+- Content-based recommender system for suggesting similar properties  
+- Streamlit-based frontend for an interactive user experience
 
+---
 
-## How to Use
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/GurgaonHomeValuePredictorApp.git
-2. Navigate to the project directory:
-   ```bash
-   cd GurgaonHomeValuePredictorApp
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-4. Run the Streamlit app::
-   ```bash
-   streamlit run app.py
-   
-## Screenshots of App
+## Model Comparison
 
-<div align="center">
-  <div style="display: flex; justify-content: space-between;">
-    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 10 PM" src="https://github.com/user-attachments/assets/4de4e1c1-031f-4c25-bdb6-5113a7fae804">
-    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 41 PM" src="https://github.com/user-attachments/assets/cd8653f2-340b-46ca-bbdf-90cfb8a550d0">
-  </div>
-  <div style="display: flex; justify-content: space-between; margin-top: 15px;">
-    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 10 PM" src="https://github.com/user-attachments/assets/0bdb7c71-b0f5-4cbb-bdc3-e13f46c36ebe">
-    <img width="45%" height="300px" alt="Screenshot 2024-08-14 at 4 37 41 PM" src="https://github.com/user-attachments/assets/74c76353-be94-42a8-8f5c-0bc2f40bcda4">
-  </div>
-</div>
+| Metric                  | XGBoost + Feature Engineering | Custom ANN (PyTorch + Optuna) |
+|-------------------------|------------------------------|-------------------------------|
+| R² Score                | 0.89                          | 0.80                          |
+| Mean Absolute Error     | 7.5 Lakhs                     | 8.6 Lakhs                     |
+| Root Mean Squared Error | 11.2 Lakhs                    | 13.7 Lakhs                    |
 
-## Future Enhancements
-- **Online Deployment**: Plan to deploy the application online for broader accessibility, allowing users to access it from any location.
-- **Integration with More Real-Time Data Sources**: Plan to incorporate additional real-time data sources for more accurate predictions.
-- **Advanced Filtering**: Add more advanced filtering options for users to refine their input criteria.
-- **Model Improvements**: Explore other machine learning models and techniques to enhance prediction accuracy.
+The XGBoost model, enhanced with engineered features and SHAP interpretability, outperformed the deep learning model by approximately 9% in R² score. It also exhibited better error metrics, making it the more reliable model in this context.
 
+---
 
+## Technical Stack
 
+- **Frontend:** Streamlit  
+- **Backend:** Python  
+- **Machine Learning:** XGBoost, SHAP  
+- **Deep Learning:** PyTorch with Optuna  
+- **Preprocessing:** ColumnTransformer, Category Encoders  
+- **Visualization:** Seaborn, Matplotlib  
+- **Deployment:** Streamlit (local and deployable to cloud)
 
+---
 
+## Methodology
 
+- Data cleaning and preprocessing using Pandas and regular expressions  
+- Feature engineering using domain knowledge and clustering approaches  
+- Feature importance analysis via SHAP and permutation methods  
+- Hyperparameter tuning with RandomizedSearchCV for ML and Optuna for DL  
+- Separate pipelines for ML and DL to enable model comparison  
+- Recommendation logic based on a hybrid similarity score combining price, facilities, and location
 
+---
 
+## How to Run Locally
 
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/GurgaonHomeValuePredictorApp.git
 
+# Navigate to the project directory
+cd GurgaonHomeValuePredictorApp
 
+# Install required packages
+pip install -r requirements.txt
 
+# Launch the Streamlit app
+streamlit run app.py
