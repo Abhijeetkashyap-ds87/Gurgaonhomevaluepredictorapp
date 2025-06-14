@@ -23,72 +23,82 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- App Title ---
-st.title("🏠 Gurgaon Home Value Predictor")
+st.title("Gurgaon Home Value Predictor")
 
 # --- Summary Section ---
+st.markdown("## Project Overview")
 st.markdown("""
-### 🎯 Project Overview
-This app predicts **residential property prices in Gurgaon** using state-of-the-art machine learning techniques.  
-It also recommends similar properties using a content-based recommender system.
+This application estimates residential property prices in Gurgaon using advanced machine learning techniques.  
+It also recommends similar properties based on user preferences through a content-based recommendation system.
 
-The project was designed to:
-- Compare different ML and DL approaches
-- Identify the most **accurate and interpretable model**
-- Provide a seamless and interactive deployment experience
+The goal of this project is to:
+- Compare and evaluate different ML and DL models for property price prediction.
+- Build a transparent and interpretable prediction pipeline.
+- Provide a clean, interactive, and deployable solution using Streamlit.
 """)
 
-# --- Your Role ---
-st.markdown("### 👨‍💻 My Contributions")
+# --- About Role ---
+st.markdown("## My Role in the Project")
 st.markdown("""
-- Built an end-to-end pipeline using **XGBoost with engineered features**  
-- Developed a **Custom ANN** and tuned it with **Optuna**  
-- Implemented **SHAP** to interpret the ML model's predictions  
-- Deployed the app with a clean UI using **Streamlit Cloud**  
-- Integrated a **content-based property recommender**
+As a final-year B.Tech student at IIIT Agartala with an interest in machine learning and deployment,  
+I developed this project to apply the concepts I’ve learned and strengthen my practical understanding.
+
+I was responsible for:
+- Designing and training an XGBoost-based pipeline with custom feature engineering.
+- Building a deep learning model (Custom ANN) and tuning it with Optuna.
+- Using SHAP for interpreting machine learning model outputs.
+- Creating an intuitive interface using Streamlit.
+- Implementing a content-based recommender to suggest similar properties.
 """)
 
 # --- Model Comparison Section ---
-st.markdown("### 📊 Model Performance Comparison")
+st.markdown("## Model Performance Comparison")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("#### ✅ Best Model: XGBoost + Feature Engineering")
+    st.markdown("**XGBoost + Feature Engineering (Best Performer)**")
     st.metric("R² Score", "0.89")
-    st.metric("MAE", "7.5 Lakhs")
-    st.metric("RMSE", "11.2 Lakhs")
-    st.caption("• Advanced feature engineering\n• SHAP-based interpretability")
+    st.metric("Mean Absolute Error", "7.5 Lakhs")
+    st.metric("Root Mean Squared Error", "11.2 Lakhs")
+    st.caption("Rich feature engineering and SHAP-based interpretation")
 
 with col2:
-    st.markdown("#### 🧠 Deep Learning (Custom ANN + Optuna)")
+    st.markdown("**Deep Learning (Custom ANN + Optuna)**")
     st.metric("R² Score", "0.80")
-    st.metric("MAE", "8.6 Lakhs")
-    st.metric("RMSE", "13.7 Lakhs")
-    st.caption("• Custom ANN tuned with Optuna\n• Dropout and batch normalization")
+    st.metric("Mean Absolute Error", "8.6 Lakhs")
+    st.metric("Root Mean Squared Error", "13.7 Lakhs")
+    st.caption("Built using PyTorch with regularization techniques")
 
-st.info("📌 **XGBoost model outperformed Deep Learning by ~9%** in accuracy (R²). It also provided better interpretability using SHAP.")
+st.info(
+    "While both models performed well, the XGBoost model offered ~9% higher accuracy and better interpretability. "
+    "This made it more suitable for deployment and real-world use."
+)
 
 # --- Tech Stack Section ---
-st.markdown("### 🛠️ Tech Stack Used")
+st.markdown("## Tools and Technologies Used")
 st.markdown("""
 - **Frontend**: Streamlit  
-- **ML Model**: XGBoostRegressor + SHAP  
-- **DL Model**: Custom ANN built with PyTorch and tuned via Optuna  
-- **Preprocessing**: ColumnTransformer, Category Encoders  
-- **Visualization**: Matplotlib, Seaborn  
+- **Machine Learning**: XGBoost, SHAP  
+- **Deep Learning**: PyTorch, Optuna  
+- **Preprocessing**: Scikit-learn ColumnTransformer, Category Encoders  
+- **Data Visualization**: Matplotlib, Seaborn  
 - **Deployment**: Streamlit Cloud
 """)
 
-# --- Navigation Info ---
-st.markdown("### 📁 Explore the App")
+# --- App Navigation Info ---
+st.markdown("## App Modules")
 st.markdown("""
-1. 🤖 **Machine Learning Predictor** – XGBoost + SHAP explanations  
-2. 🧠 **Deep Learning Predictor** – Custom ANN (PyTorch + Optuna)  
-3. 🏡 **Property Recommender** – Content-based filtering  
+1. **Machine Learning Predictor** – Uses XGBoost with SHAP explanations  
+2. **Deep Learning Predictor** – Custom ANN model built and tuned using PyTorch + Optuna  
+3. **Property Recommendation System** – Content-based filtering to suggest similar properties
 """)
 
-# --- Contact / GitHub ---
-st.markdown("### 🔗 Connect With Me")
+# --- Contact Section ---
+st.markdown("## Connect with Me")
 st.markdown("""
-- GitHub: [github.com/your-profile](https://github.com/Abhijeetkashyap-ds87)  
+If you're interested in discussing this project, giving feedback, or exploring collaboration, feel free to connect:
+
+- **GitHub**: [github.com/Abhijeetkashyap-ds87](https://github.com/Abhijeetkashyap-ds87)  
+- **LinkedIn**: [linkedin.com/in/abhijeetkashyap-ds](https://www.linkedin.com/in/abhijeet-kashyap-250293233/)
 """)
